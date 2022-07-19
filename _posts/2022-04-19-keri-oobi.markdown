@@ -1,0 +1,209 @@
+---
+layout: post
+title:  "KERI OOBI"
+date:   2022-04-19 12:00
+categories: identifiers
+---
+# KERI OOBI
+
+Out-Of-Band-Introductions for discovery and validation of IP resources for KERI autonomic identifiers. The HTTPS protocol (X.509) is going to play second fiddle. KERI OOBI offers three major advantages over in-band discovery.
+
+It must have been the fall of 2021. Covid measures were still being strictly enforced. I heard the term KERI OOBI for the first time during one of our bi-weekly virtual KERI meetings. I thought they might be throwing us a *karaoke* party. But no. Instead, I witnessed the repair of the broken internet. (You might not think so, but the internet is broken.) If you had hopped on the KERI bandwagon a few years earlier, this OOBI finale could have been just as exciting for you as it was for a handful of informed insiders.
+
+![Don’t mistake KERI-OOBI for Karaoke](https://cdn-images-1.medium.com/max/2000/1*CxtoJXW2vmMEuMKkb8nk4w.jpeg)*Don’t mistake KERI-OOBI for Karaoke*
+
+*Completely new to KERI? Start [here](https://keri.one). *This article is accessible for an intermediate to advanced audience in KERI.
+
+**KERI : Key Event Receipt Infrastructure**. It is an autonomic identifier system that fixes the internet. It’s a fully decentralized permission-less key management architecture. It solves the secure attribution problem to its identifiers and allows portability.
+
+**OOBI : Out-Of-Band-Introductions, **discovery and validation of IP resources for KERI autonomic identifiers.
+
+November 2020: Sam Smith explains (and I am paraphrasing, ed.) how KERI fixes the internet. “Anyone is free to oppose KERI’s roadmap, and say ‘show me the code, you haven’t got it yet’ but don’t tell me KERI can’t do it. The internet is broken because you need a middleman to be sure *who has sent you what*. KERI fixes this dependency, by taking care that its identifiers are verifiable to their primary root of trust.”
+A *middleman* is an individual or organisation that acts as a gateway, an in-between. Middlemen have to be trusted and anything can go wrong with them.
+In contrast a *primary root of trust* is a public and private key pair initiated by and under the control of a single individual. As long as you keep the private key private, there is no in-between pitfall.
+
+Broken as the internet apparently is, Sam refers to the DNS problem, whereby a middleman, a Certificate Authority (CA), attests that a certain IP address is controlled by a certain identity, e.g. Google.com. How can you be sure that you’re on Google’s website and no one else’s? You can’t. You trust a CA for that when you type ‘https://….. ‘. CAs attest that whoever presents the certification is considered trusted, because the CA says so. These certificates are then used to do a key exchange, to finally establish the best possible secure channel. But this still trusts the security of CAs. And that is what KERI gets rid of, by taking care that its identifiers are verifiable to their primary root of trust.
+
+Next, the *primary root of trust *refers to a public and private key pair initiated, and sovereignly managed, by a so-called *controller*. A controller is somebody who controls the private key. In other words, a source signed by the controller is cryptographically verifiable, straight to somebody’s digital wallet.
+
+![](https://cdn-images-1.medium.com/max/3200/1*w1NeTintycUXIlycBljzJg.png)
+
+Hence there’s no *middleman* involved. Without a middleman, communication is one-on-one (also called *peer-to-peer*). With peer-to-peer communication that is cryptographical verifiable, you can be absolutely sure about who said what. And to do that, you need KERI’s globally available, self-certifiying, self-addressing identifiers to repair the internet. The KERI white paper has laid out how since 2018. The image below is just a snapshot of the whole KERI identifier system design. How KERI identifiers have become plentiful and consistently available is beyond the scope of this article.
+
+![](https://cdn-images-1.medium.com/max/4120/1*hwuSdtR0_8l6yDE-EBIqMA.png)
+
+Subsequently, code has been written, concepts refined and lessons learned. KERI’s first major elaboration has been in Authentic Chained Data Containers (ACDCs). You can read more about ACDCs [here](https://datatracker.ietf.org/doc/html/draft-ssmith-acdc). In brief, the ACDC proves digital data consistency and authenticity in one go. An ACDC cryptographically secures commitment to data contained, and its identifiers are self-addressing, which means they point to themselves and are also contained ìn the data.
+
+![An ACDC and an enclosed Self-addressing Identifier (SAID)](https://cdn-images-1.medium.com/max/3156/1*k898gLt0JRrE52qHmdObVg.png)*An ACDC and an enclosed Self-addressing Identifier (SAID)*
+
+Any rationally thinking IT-expert would initially say ‘No! You can’t put an identifier in a block of data, hash it, sign it and then get the same identifier. That’s magic, it’s a trick to fool us’. 
+But in reality it can be done with a smart trick that’s **no magic and it’s not fooling us**. The solution is a sort of Columbus’ egg: a plain and open design using one-way cryptographic functions. However, having triggered your interest in ACDCs, it’s time to return to the topic of this article: OOBIs.
+
+## OOBI for chief security
+
+Without a doubt OOBI is one of the key building blocks for KERI’s (and ACDC’s) ecosystems. Above all, it guarantees security.
+
+Let’s a have a close look at OOBI. What is it and why would anyone need this? Does it play a vital role for KERI or ACDC? Could we do without it and offer the same level of security? How is OOBI used?
+
+In particular, consider more practical questions: Are we getting *more* secure communication with OOBI? Does it mean *faster* validation? The brief answer is ‘Yes, it does all that’, and more. It takes the (broken) internet in hand and sets it on the right track. What? The new kid on the block has the guts to make the leader of the orchestra play second fiddle? The internet becomes a kind of helper doing odd jobs? Hold your horses and keep your respect for the web, we’ll set out how this works.
+
+But, what is OOBI?
+> **Out-of-band** is activity outside a defined telecommunications frequency band, or, metaphorically, outside some other kind of activity. Protection from falsing is among its purposes. ([Source](https://en.wikipedia.org/wiki/Out-of-band))
+
+Technically put, the Out of Band (OOB) association model is primarily designed for scenarios where an Out of Band mechanism is used to both discover the devices as well as to exchange or transfer cryptographic material used in the pairing process. ([Source](https://siliconlabs.force.com/community/s/article/oob-introduction-and-example?language=en_US))
+
+Think of Bluetooth pairing as an example. Imagine two devices have already been connected by a cable. An OOBI then means these devices connect in another, different way, exchanging secrets to authenticate and then establish communication. To summarise the analogy in this example, the connecting cable is *In-band, *the bluetooth connection is* Out-of-band.*
+
+![Out-of-band authentication by H. K. Lu et al.](https://cdn-images-1.medium.com/max/2000/1*Yax-t7DuHFtH8gaKh68qMA.png)*Out-of-band authentication by H. K. Lu et al.*
+
+Beware, Out-of-Band is also a term with multiple explanations depending on the field of application. It means something different in telecommunications than it does in the context of the internet.
+
+Looking more closely at KERI, why does it need an out-of-band introduction (OOBI)?
+
+## An OOB Introduction on the internet for KERI means the discovery and validation of endpoints on the internet (URL to DNS to IP) — Why not use DID resolution for this?
+> # Wait a minute. Haven’t we been here before, done that?!
+
+Let’s first brush up on our ready knowledge about those three terms: DNS, endpoint and DIDs. **DNS** is a domain name server or service that translates or maps domain names like google.com and keri.one to IP-addresses (e.g.142.250.67.78). **Endpoint **is a remote computing device that communicates back and forth with a network to which it is connected. Examples of endpoints include: servers, workstations, Internet-of-things (IoT) devices, desktop, laptops, smartphones, tablets. **DID (Decentralized Identifier) **is a technology that uses cryptography to allow individuals to create and control their own unique identifiers. [DID resolution](https://w3c-ccg.github.io/did-resolution/#dfn-did-resolution) is the process of obtaining a [DID document](https://w3c-ccg.github.io/did-resolution/#dfn-did-document) for a given [DID](https://w3c-ccg.github.io/did-resolution/#dfn-did) on the web. It means the discovery and validation of endpoints.
+
+    Example
+
+    did:example:1234
+
+    It returns the DID document at endpoint 1234
+
+### Why not use DID resolution to discover endpoints?
+
+Critics might rush to judgment and argue that KERI pays the price for stubborness. “We have DIDs, alright?, why don’t you use them?”
+Or “Oh, you’re still planning to design and build it.., well, get back to me when you can show me the code.” Or “No! I can’t believe this. Reversed engineering to the point that we already have the universal DID resolution? **Universal.** Can you hear me, KERI? It is already working for you, today. Why are you building siloed code that you don’t really need. The solution’s already there?!”
+
+Mildly put, the KERI OOBI effort might be received with a mixed reception. Nevertheless, the broader Self-Sovereign Identity community is resilient and always open to arguments.
+Therefore, we’d like to keep the ‘why’ of a tailor-made solution for KERI short and to the point: KERI had to come up with something new. Essentially the goal of this write-up is so that one
+> # …never forgets KERI OOBI offers three major advantages over in-band discovery (X.509 protocol) and Certificate Transparency. In contrast, DID resolution is sometimes dependent of X.509 protocol and Certificate Transparency.
+
+KERI expert Philip Feairheller isn’t impressed yet. “This is a difficult argument. I’m pretty sure a DID resolver could be run on just IP addresses and as a matter of fact the Indy network boot config file has only IP addresses in it, as opposed to DNS host names.” 
+Hmm, so we have to do better to be convincing. To be fair: the KERI team need to be arguing for the best to hold their ground about why they invented something new. Feairheller helps out by adding
+“A more proper argument here is that…
+> # ‘DID resolution relies on heavy weight blockchain infrastructure for the simple act of discovery and it conflates discovery with cryptographic veracity.’ “
+
+As a matter of fact, one could use any resolution mechanism for KERI, because the KERI protool offers to *never trust, always (cryptographically) verify*. So why should the KERI team roll their own OOBI and not use a readily-available one such as web resolution? Indeed, if KERI is as end-verifiable as it claims, then it doesn’t need to trust any resolution mechanism at all.
+Well, this is not entirely true. We still have the *chicken and egg* problem: which came first? Peers in a connection need to mutually authenticate first. What’s first: trust or validation?
+
+The answer can be found on the first page of the OOBI draft specification:
+
+    From the IETF draft specification ([https://datatracker.ietf.org/doc/html/draft-ssmith-oobi](https://datatracker.ietf.org/doc/html/draft-ssmith-oobi)):
+     
+    An Out-Of-Band Introduction (OOBI) provides a discovery mechanism that associates a given URI or URL with a given AID (Autonomic IDentifier) or SAID (Self-Addressing IDentifier). The URI provided by an OOBI acts as a service endpoint for the discovery of verifiable information about the AID or SAID. As such an OOBI itself is **not trusted** but must be verified.  
+
+    To clarify, any information obtained from the service endpoint provided in the OOBI must be verified by some other mechanism.  An OOBI, however, **enables any internet and web search infrastructure** to act as an out-of-band infrastructure to discover information that is **verified using an in-band mechanism** or protocol.
+    The primary in-band verification protocol **is KERI**.
+
+Forget, for a moment, all the new terms; they’ll be explained in a minute. The main take-away from the text box above is that it concludes ‘egg and chicken work well together’; **discovery via URI, trust via KERI**. 
+DIDs are not as suitable as URIs, because of the principle of KERI: solve a problem in the real world with the minimum techniques needed. The more basic the technology, but still sufficient to solve the problem, the better. DIDs are already too extensive, to serve as minimal sufficient means for KERI OOBI, turned out to be just the http:// protocol on the internet.
+
+**Why OOBI on the internet?**
+
+It’s simply very practical to use the internet as a discovery mechanism for KERI OOBI! Therefore the ‘I’ in OOBI refers to both the Introduction and the Infrastructure.
+
+![](https://cdn-images-1.medium.com/max/2000/1*xKZXDmV6PyaRFw8K2jQ9SQ.jpeg)
+
+Before we go further, let me introduce some more terminology:
+
+**AID : KERI Autonomic identifiers.** These are Self-Addressing Self-Certifying identifiers. (Yes, I’m dead serious about this)
+
+**SCI : A Self-Certifying Identifier** cryptographically binds an identifier to a public and private key pair. It is an identifier that can be proven to be the one and only identifier tied to a public key using cryptography alone.
+
+**SAID : Self Addressing Identifier.** This is a self certifying identifier (SCI) that has been attached to a certain context or infrastructure at the time of its inception. This means authentication of content (what?) and attribution of sender (who?) in one go.
+
+**Secure Attribution Problem** — Over the internet, I can’t really know you, therefore I can’t really trust you. As opposed to in-person human trust where I can know you, therefore I can trust you.
+
+**CT : Certificate Transparency — **Internet security standard and open source framework for monitoring and auditing digital certificates. The standard creates a system of public logs that seek to eventually record all certificates issued by publicly trusted certificate authorities, allowing efficient identification of mistakenly or maliciously issued certificates. As of 2021, Certificate Transparency is mandatory for all SSL/TLS certificates.
+
+**DHT : Distributed Hash Table** —It is a distributed system that provides a lookup service similar to a hash table. Key-value pairs are stored in a DHT, and any participating node can efficiently retrieve the value associated with a given key. The main advantage of a DHT is that nodes can be added or removed with minimum work around re-distributing keys. Keys are unique identifiers which map to particular values, which in turn can be anything from addresses, to documents, to arbitrary data. ([Wikipedia](https://en.wikipedia.org/wiki/Distributed_hash_table))
+
+Certificate Authorities use Certificate Transparancy as a way to validate.
+
+To summarize and correlate:
+> KERI AIDs can be used to (DID-like) resolve to endpoints on the web, but we need OOBI to keep on track solving the Secure Attribution Problem.
+
+Does this still sound like gibberish to you? Go over the definitions a few times again and try to grasp the summary. If you’re done, enjoy the next step. Remember: our goal is that you never forget OOBI offers a few major advantages over in-band discovery (X.509 protocol) and Certificate Transparancy. The first two advantages concern DHT and CT:
+1. We can skip DHTs
+2. Duplicity reconciliation has extra advantages over Certificate Transparency (CT)
+
+Now that we’ve gone one level up, let’s go back to KERI inventor Sam Smith.
+> Sam Smith (source [KERI OOBI](https://hackmd.io/@SamuelMSmith/rJy83sQQY)) talking about the need for KERI OOBI: “Vacuous discovery of IP resources such as service endpoints associated with a KERI AID requires an Out-Of-Band Introduction (OOBI) to associate a given URL with a given AID. The principal reason for this requirement is that KERI AIDs are pseudonymous and completely independent of internet and DNS addressing infrastructure. Thus an IP address or URL could be considered a type of Out-Of-Band Infrastructure (OOBI) for KERI. In this context an introduction is an association between a KERI AID and a URL which may include either an explicit IP address for its netloc or a DNS name. We call this a KERI OOBI (Out-Of-Band-Introduction) and is a special case of Out-Of-Band-Infrastructure (OOBI) with a shared acronym. For the sake of clarity, unless otherwise qualified, OOBI is used to mean this special case of an introduction and not the general case.”
+
+Evil tongues claim that Sam also talks to his family like this, but I don’t think so. As one of the few non-native speakers in the Keri meetings, it took me a while to dare to say** “It sounds like English, but it isn’t!”**
+> *(We could talk about how typical IETF-draft wording uses jargon and creates words that make it difficult to follow — unless you are one of the insiders. But that would be another article and we need to stay focussed!)*
+
+Let’s move forward with the third advantage of KERI OOBI.
+
+### Percolated Discovery
+
+Percolated discovery is another major advantage. Again, this term needs to be explained. 
+‘*Discovery’* is the easy part. OOBIs are all about discovery. *‘Percolated’* refers to the concept that OOBIs are shared amongst participants in a transaction on a ‘need to know’ basis. So there doesn’t have to be one centralized (hackable) source of discovery, for example through the above-mentioned DHTs. Instead, in *percolated* discovery this information is shared in *real time* as it is needed through the security guarantees of OOBIs. It’s an advantage because it’s a random decentralised process among a growing number of participants and transactions that floods or percolates the network. It’s not centralised nor predictable, so therefore it’s hard — if not impossible — to hack. 
+Thus discovery is percolated across the entire ecosystem as the number of transactions and participants grows.
+
+In the citation above, Smith clearly narrows down the field of application of the Out-of-Band mechanism that is being developed: KERI only. Furthermore, **he connects trusted KERI identifiers with discovered URLs for more security and a way to get communication over the internet going in a verifiable and confidential way.**
+> Is that all? Yes, that’s about it. If you don’t need to be 100% correct, backward compatible, fully referencing literature and, above all, if you don’t need to convince other experts and critics, then that is about it. Easy does it.
+
+But, don’t relax yet. Sam continues: “Moreover, because IP infrastructure is not trusted by KERI, a KERI OOBI by itself is considered insecure with respect to KERI and any OOBI must therefore be later proven and verified using a KERI BADA** (Best Available Data Acceptance) mechanism. The principal use case for an OOBI is to jump start the discovery of a service endpoint for a given AID. To reiterate, the OOBI by itself is not sufficient for discovery because the OOBI itself is insecure. **The OOBI merely jump starts authenticated discovery.**” (source [KERI OOBI](https://hackmd.io/@SamuelMSmith/rJy83sQQY)).
+
+This means that KERI is going to rely on its own inner workings* (verifiability to the root-of-trust, “first seen” and duplicity detection) as a next step after having set off the validation proces by the ‘first seen’ discovery of an IP address related to a KERI AID.
+
+*The [KERI whitepaper](https://github.com/SmithSamuelM/Papers/blob/fe5a5bc7093cb7c550dfaf35a5fb1d221571aa11/whitepapers/KERI_WP_2.x.web.pdf) explains the design and operation of KERI-based identity systems.
+
+Using IP and DNS infrastructure to introduce KERI AIDs, which AIDs are then securely attributed, allows KERI to leverage IP and DNS infrastructure for discovery. KERI therefore doesn’t need its own dedicated discovery network, OOBIs as URLs will do.
+
+The simplest form of a KERI OOBI is a namespaced string, a tuple, a mapping, a structured message, or structured attachment that contains both a KERI AID and a URL. Sam Smith has called this “**iurl**”. The OOBI associates the URL with the AID. In tuple form this is, abstractly:
+> (url, aid)
+
+and concretely:
+> (“[http://8.8.5.6:8080/oobi](http://8.8.5.6:8080/oobi)", “EaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM”)
+
+### Flow
+
+We have two types of introductions — a *blind* introduction and an *open* introduction.
+
+**Blind**
+
+This provides only a Url and no AID. It’s “blind” because you’ve done the introduction yourself — it is trustworthy. You don’t have to publish the AID, which offers privacy advantages. The counterpart trusts the URL and combines the secretly kept -or exchanged- AID with this.
+
+**Open**
+
+The AID is published with the url. The validator can address the watcher network to validate the OOBI.
+
+As soon as OOBI is bootstrapped and the witnesses are “installed” (*introduction* *phase* fulfilled), the controller’s AID is ready to be validated.
+
+Watchers start gossiping with the witnesses (watchers need to be as promiscuous as possible) and from that point on it doesn’t matter which witnesses will be chosen from the witness pool. That’s up to the validator. If there’s no duplicity, or duplicity that’s reconcileable, the *validation phase* is fulfilled.
+
+**OOBI forward** 
+Suppose the URL fails, you create a new URL and a forward. Everything you get is end-verifiable.
+
+Compared to roles in an orchestra, KERI is *the lead violin* in this analogy, the main player (security!). The internet X.509 and CA’s play *second fiddle *(discovery). Together they are a better team.
+
+![](https://cdn-images-1.medium.com/max/2000/1*I73rzLty5W4YMN87UxJ3Fg.jpeg)
+
+**Why KERI OOBI offers more**
+
+As promised the three major advantages as set out in my take-away:
+- We skip the DHT step, because the introduction is all you need.
+- The KERI AIDs take care of duplicity*** detection, reconciliation and forwarding.
+- Percolated discovery, the random build up of authentic information among peers on a ‘need to know’ basis as the network and the number of transactions grows.
+
+In other words: **more efficiency, less vulnerability to hacks, purer self sovereignty, and middlemen cut out of the equation.**
+
+** BADA : Best Available Data Acceptance mechanism; this security model provides a degree of replay attack protection. BADA is part of KERI’s [*Zero Trust Computing Architecture for Data Management](https://hackmd.io/Qsrfj7Y-TIGl5ESvrxWGxw).*
+*** Certificate Transparency can only detect inconsistency (example: DHT nodes sybil attacks). *Duplicity detection* is more sophisticated, because you get to know the source of duplicity and you have reconciliation options.
+
+### Acknowledgements
+
+Thanks to Kent Bull, Philip Feairheller and Michal Pietrus for reviewing a draft of the article. Thank you, William Lindsay, for being my English teacher, and for your relentless enthusiasm to optimise the use of language in my articles.
+
+Karaoke sign by English@Edrissis, [http://englishedrissis.blogspot.com/2012/02/karaoke-addiction.html](http://englishedrissis.blogspot.com/2012/02/karaoke-addiction.html)
+
+Out-of-band authentication image by H. K. Lu et al.
+[https://api.semanticscholar.org/CorpusID:209373439](https://api.semanticscholar.org/CorpusID:209373439)
+
+Second fiddle image by Adam-Fagen, CC BY-NC-SA 2.0, [https://www.flickr.com/photos/afagen/7763290318/](https://www.flickr.com/photos/afagen/7763290318/)
+
+Images ‘**Trust Basis for Identifier Issuance’ **and** ‘KERI‘s Autonomic Trust Basis Cryptographic Root-of-Trust’** from GLEIF vLEI Architecture — Samuel M. Smith Ph.D. version 1.2, 2021–01–05

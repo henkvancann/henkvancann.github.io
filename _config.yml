@@ -7,9 +7,12 @@
 title: Henk van Cann's Github adventures
 email: info@blockchainbird.org
 description: >- # this means to ignore newlines until "baseurl:"
-  I'm not a programmer but I create documentation and educational resources. 
-  My Github user page is specifying what the teams I work mean when we say:
-  Self-Sovereign Identity (SSI) Autonomic Identifiers (AID), KERI, OOBI, CESR, and ACDC.
+  I'm not a programmer but I can read code and consequently have an opinion.
+  I create documentation and educational resources in teams of expert developers. 
+  My Github user page explains the often forked repos of the teams I work in, 
+  and I try to add what we mean when we say
+  Issuer, Controller, Validator, Verifier, Proof, Root-of-trust, etc. and more in general:
+  Self-Sovereign Identity (SSI), Autonomic Identifiers (AID), `KERI`, `OOBI`, `CESR`, and `ACDC`.
   Blockchain Commons, Trust-over-IP, Internet Identity Workshop (IIW) and DIF are among
   my favorite organization to donate to.
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -18,6 +21,8 @@ twitter_username: henkvancann
 github_username:  henkvancann
 # theme: jekyll-theme-primer
 remote_theme: pages-themes/modernist@v0.2.0
+
+permalink: none
 
 # Build settings
 plugins:
@@ -43,3 +48,4 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
