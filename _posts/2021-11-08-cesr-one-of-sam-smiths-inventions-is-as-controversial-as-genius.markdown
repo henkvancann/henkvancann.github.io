@@ -4,16 +4,10 @@ title:  "CESR, one of Sam Smith’s inventions, is as controversial as it is gen
 date:   2021-11-08 12:00
 categories: identifiers
 ---
-> medium-to-markdown@0.0.3 convert
-> node index.js
+What is it, and why another standard? Why won’t this obstinate KERI project get out of the way and let us use an existing operational standard, for once? The main takeaway from this article is a kind of work assignment (“Me?!?” ‘Yeah, you!’): I’d like you to try and match the unique features of CESR to situations you might recognise as applicable. First, become an expert with this seven-minute-read article ;)
 
 [![Henk van Cann](https://miro.medium.com/fit/c/96/96/1*lHEKsx9xfeUiXPW2pqwC1Q.jpeg)
 
-](https://medium.com/@hvancann?source=post_page-----d757f36b88f8--------------------------------)[Henk van Cann](https://medium.com/@hvancann?source=post_page-----d757f36b88f8--------------------------------)Follow
-
-Nov 8, 2021
-
-·7 min read
 
 # CESR, one of Sam Smith’s inventions, is as controversial as it is genius. 
 
